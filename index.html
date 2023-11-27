@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link type="image/x-icon" href="favicon.png" rel="shortcut icon" />
 		<title>Добро пожаловать</title>
 		<style>
 			* {
@@ -16,27 +17,108 @@
 			}
 
 			body {
+				position: relative;
 				overflow-y: auto;
 				font-family: Arial, sans-serif;
 				background-color: #fff;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				min-height: 100vh;
 			}
 
-			main {
+			.desc {
+				font-size: 20px;
+				margin-top: 30px;
+				line-height: 24px;
+			}
+			.content {
+				max-width: 800px;
+				width: 100%;
+				margin: 0 auto;
+				padding: 50px 16px 0;
+			}
+			h1 {
+				text-align: center;
+			}
+			p {
+				text-align: justify;
+			}
+			#take-test {
+				color: #fff;
 				display: flex;
-				justify-content: center;
+				width: max-content;
+				margin: 30px auto 0;
+				background: cadetblue;
+				padding: 6px 12px;
+				border-radius: 50px;
+				font-size: 20px;
+			}
+			img {
+				width: 100%;
+				margin-top: 30px;
+			}
+			#popup {
+				position: fixed;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				z-index: 100;
+				display: flex;
 				align-items: center;
+				justify-content: center;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+			.content-popup {
+				width: 300px;
+				background: #fff;
+				padding: 20px;
+				border-radius: 16px;
+			}
+			.content-popup img {
+				margin-top: 0;
+				margin-bottom: 10px;
+			}
+			.content-popup p {
+				text-align: left;
+				text-align: center;
+			}
+			.content-popup p a {
+				color: darkcyan;
+			}
+			#popup.hidden {
+				display: none;
 			}
 		</style>
 	</head>
 	<body>
+		<div id="popup" class="hidden">
+			<div class="content-popup">
+				<img src="img/banner.jpg" />
+				<p>
+					Для прохождения теста пожалуйста
+					<a href="login.html">авторизуйтесь</a>
+				</p>
+			</div>
+		</div>
 		<main>
-			<h1>Добро пожаловать!</h1>
-			<a href="login.html">login</a>
+			<div class="content">
+				<h1>ТЕСТ: Качественный текстиль или подделка?</h1>
+				<img src="img/banner.jpg" />
+				<p class="desc">
+					Высокая стоимость постельного белья – это далеко не всегда показатель
+					исключительного качества. Ведь нередко случается так, что в красивой
+					упаковке с привлекательным логотипом скрывается комплект, на который
+					даже не стоило тратить деньги. Мы предлагаем простой тест, чтобы
+					проверить, сможешь ли ты «узнать» по-настоящему качественный текстиль
+					в огромном ассортименте заманчивых предложений.
+				</p>
+				<a id="take-test" href="javascript: void(0)">Пройти тест</a>
+			</div>
 		</main>
-		<script></script>
+		<script>
+			let takeTest = document.querySelector('#take-test')
+			let popup = document.querySelector('#popup')
+			takeTest?.addEventListener('click', e => {
+				popup.classList.remove('hidden')
+			})
+		</script>
 	</body>
 </html>

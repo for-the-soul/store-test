@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link type="image/x-icon" href="favicon.png" rel="shortcut icon" />
 		<title>Test instagram store</title>
 		<style>
 			* {
@@ -19,21 +20,446 @@
 				overflow-y: auto;
 				font-family: Arial, sans-serif;
 				background-color: #fff;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				min-height: 100vh;
 			}
 
-			main {
+			li {
+				margin-bottom: 15px;
+			}
+			.top_block {
+				margin: 0 auto 30px;
+				max-width: 800px;
+				text-align: center;
+			}
+			.image {
+				width: 100%;
+			}
+			.image img {
+				width: 100%;
+			}
+			.type3 {
+				margin-top: 30px;
+			}
+			.quastion-container {
+				padding: 0 16px 50px;
+				max-width: 800px;
+				margin: 0 auto;
+			}
+			.desc {
+				font-size: 20px;
+				line-height: 24px;
+				margin-bottom: 30px;
+			}
+			.check {
+				cursor: pointer;
+			}
+			.title-block {
+				margin-bottom: 20px;
+				font-size: 20px;
+				line-height: 24px;
+			}
+			.quastion-list {
+				margin-bottom: 20px;
+			}
+			.js-answers-show {
+				color: #fff;
 				display: flex;
-				justify-content: center;
-				align-items: center;
+				width: max-content;
+				margin: 0 auto;
+				background: cadetblue;
+				padding: 6px 12px;
+				border-radius: 50px;
+				font-size: 20px;
+				line-height: 24px;
 			}
 		</style>
 	</head>
 	<body>
-		<main>Тест</main>
+		<main>
+			<div class="blog_article max900 roll_curtains_apr size2">
+				<div class="top_block">
+					<div class="image">
+						<img src="img/banner.jpg" />
+					</div>
+					<div class="title noshad ttl_3">
+						<h1 class="type3">
+							ТЕСТ: <small>Качественный текстиль или подделка?</small>
+						</h1>
+					</div>
+				</div>
+				<div class="wrap">
+					<div class="quastion-container">
+						<div class="quastion-holder">
+							<div class="quastion quastion1 active">
+								<div class="title-block">
+									Какая расцветка постельного белья первой привлечет твое
+									внимание?
+								</div>
+								<ul class="quastion-list">
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion1" value="1" />
+											<span class="text"
+												>Двусторонний контрастный текстиль</span
+											>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion1" value="2" />
+											<span class="text"
+												>Комплект без рисунка в пастельных тонах
+											</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion1" value="3" />
+											<span class="text"
+												>Белье с изображением звездного неба
+											</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion1" value="4" />
+											<span class="text">Текстиль с ярким 3D-принтом </span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="quastion quastion2">
+								<div class="title-block">
+									Что ты считаешь главным признаком достойного качества?
+								</div>
+								<ul class="quastion-list">
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion2" value="1" />
+											<span class="text"
+												>Аккуратные швы на всех предметах из комплекта</span
+											>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion2" value="2" />
+											<span class="text">Натуральный состав ткани</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion2" value="3" />
+											<span class="text"
+												>Приятные тактильные ощущения от текстиля</span
+											>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion2" value="4" />
+											<span class="text"
+												>Проверенный бренд и трендовая расцветка</span
+											>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="quastion quastion3">
+								<div class="title-block">
+									Как ты считаешь, сколько должен стоить хороший комплект
+									постельного белья?
+								</div>
+								<ul class="quastion-list">
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion3" value="1" />
+											<span class="text">Не меньше 3000 руб.</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion3" value="2" />
+											<span class="text">От 3000 до 5000 руб.</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion3" value="3" />
+											<span class="text"
+												>Нет фиксированной цены, все зависит от материала</span
+											>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion3" value="4" />
+											<span class="text">От 1500 руб.</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="quastion quastion4">
+								<div class="title-block">
+									Что однозначно говорит о низком качестве комплекта?
+								</div>
+								<ul class="quastion-list">
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion4" value="1" />
+											<span class="text">Несимметричные наволочки</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion4" value="2" />
+											<span class="text">Нитки на один тон темнее ткани</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion4" value="3" />
+											<span class="text">Простая упаковка</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion4" value="4" />
+											<span class="text">Расцветка в цветочек</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="quastion quastion5">
+								<div class="title-block">
+									Постельное белье от какого производителя ты выберешь в подарок
+									друзьям?
+								</div>
+								<ul class="quastion-list">
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion5" value="1" />
+											<span class="text">Турция</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion5" value="2" />
+											<span class="text">Китай</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion5" value="3" />
+											<span class="text">Италия</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion5" value="4" />
+											<span class="text">Россия</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="quastion quastion6">
+								<div class="title-block">
+									Какой материал ты считаешь признаком «дешевого» постельного
+									белья?
+								</div>
+								<ul class="quastion-list">
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion6" value="1" />
+											<span class="text">Ситец</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion6" value="2" />
+											<span class="text">Полиэстер</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion6" value="3" />
+											<span class="text">Бязь</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion6" value="4" />
+											<span class="text">Бамбук</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="quastion quastion7">
+								<div class="title-block">
+									Назови отличительные черты элитного текстиля:
+								</div>
+								<ul class="quastion-list">
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion7" value="1" />
+											<span class="text"
+												>Натуральная ткань, авторские детали, удобная
+												фурнитураНатуральная ткань, авторские детали, удобная
+												фурнитура</span
+											>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion7" value="2" />
+											<span class="text"
+												>Идеальный пошив, натуральная ткань, неброский логотип
+											</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion7" value="3" />
+											<span class="text"
+												>Высокая цена, недоступность широкому кругу
+												потребителей, эксклюзивные материалы</span
+											>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion7" value="4" />
+											<span class="text"
+												>Известный зарубежный бренд, стильная упаковка, модные в
+												текущем сезоне оттенки</span
+											>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="quastion quastion8">
+								<div class="title-block">
+									Какой материал используют для пошива высококачественного
+									постельного белья?
+								</div>
+								<ul class="quastion-list">
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion8" value="1" />
+											<span class="text">Сатин</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion8" value="2" />
+											<span class="text">Египетский хлопок</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion8" value="3" />
+											<span class="text">Шелк</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion8" value="4" />
+											<span class="text">Полиэстер</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="quastion quastion9">
+								<div class="title-block">
+									Выбери утверждение, которое считаешь верным:
+								</div>
+								<ul class="quastion-list">
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion9" value="1" />
+											<span class="text"
+												>Постельное белье должно быть изготовлено из 100%
+												хлопкового материала</span
+											>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion9" value="2" />
+											<span class="text"
+												>Качественный текстиль должен содержать только
+												натуральные волокна</span
+											>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion9" value="3" />
+											<span class="text"
+												>Небольшой процент синтетики в составе улучшает
+												эксплуатационные свойства комплекта
+											</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion9" value="4" />
+											<span class="text"
+												>Самое комфортное белье шьется из новейших искусственных
+												тканей
+											</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="quastion quastion10">
+								<div class="title-block">
+									Может ли постельное белье хорошего качества окрашивать воду
+									при первой стирке?
+								</div>
+								<ul class="quastion-list">
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion10" value="1" />
+											<span class="text"
+												>Нет, но небольшой оттенок при первой стирке – это
+												нормально</span
+											>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion10" value="2" />
+											<span class="text">Нет, это недопустимо</span>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion10" value="3" />
+											<span class="text"
+												>Да, если рисунок на ткани очень яркий</span
+											>
+										</label>
+									</li>
+									<li>
+										<label class="check">
+											<input type="radio" name="quastion10" value="4" />
+											<span class="text"
+												>Да, абсолютно все ткани линяют при первой стирке</span
+											>
+										</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="answer-btn-holder">
+							<a href="answer.html" class="button purple js-answers-show"
+								>посмотреть ответы</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
 		<script></script>
 	</body>
 </html>

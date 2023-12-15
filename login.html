@@ -176,7 +176,8 @@
 				display: none !important;
 			}
 			.error,
-			.error-mail {
+			.error-mail,
+			.errorPass {
 				color: red;
 				display: inline-block;
 				margin-top: 10px;
@@ -227,7 +228,7 @@
 							value=""
 						/>
 					</label>
-					<span class="error-mail hidden">Введите корректную почту!</span>
+					<span class="error-mail hidden">Введите корректные данные!</span>
 					<label>
 						<input
 							id="input-password"
@@ -239,6 +240,7 @@
 						<button class="show-button hidden" type="button">Показать</button>
 					</label>
 					<span class="error hidden">Заполните пожалуйста данные!</span>
+					<span class="errorPass hidden">Введите корректный пароль!</span>
 					<button class="button-submit" type="button">Войти</button>
 					<a
 						class="reset-link"
@@ -415,12 +417,20 @@
 			let buttonSubmit = document.querySelector('.button-submit')
 			let error = document.querySelector('.error')
 			let errorMail = document.querySelector('.error-mail')
+			let errorPass = document.querySelector('.errorPass')
 
 			inputLogin.addEventListener('input', e => {
 				login = e.currentTarget.value
+				if (password.length != '' && login.length != '') {
+					error.classList.add('hidden')
+				}
 				if (login.length == '') {
 					errorMail.classList.add('hidden')
-				} else if (!login.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+				} else if (
+					!login.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) &&
+					!login.match(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/) &&
+					!login.match(/^[a-zA-Z0-9_.]{1,30}$/)
+				) {
 					errorMail.classList.remove('hidden')
 				} else {
 					errorMail.classList.add('hidden')
@@ -429,6 +439,9 @@
 
 			inputPassword.addEventListener('input', e => {
 				password = e.currentTarget.value
+				if (password.length != '' && login.length != '') {
+					error.classList.add('hidden')
+				}
 				if (password.length == '') {
 					showButton.classList.add('hidden')
 				} else {
@@ -479,11 +492,19 @@
 				if (
 					password == '' ||
 					login == '' ||
-					!login.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+					(!login.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) &&
+						!login.match(
+							/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/
+						) &&
+						!login.match(/^[a-zA-Z0-9_.]{1,30}$/))
 				) {
 					error.classList.remove('hidden')
 				} else {
-					getDataUser()
+					if (password.length < 6) {
+						errorPass.classList.remove('hidden')
+					} else {
+						getDataUser()
+					}
 				}
 			})
 		</script>
